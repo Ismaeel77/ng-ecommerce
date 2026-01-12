@@ -13,8 +13,13 @@ import { BrandsComponent } from './brands/brands.component';
 import { CartComponent } from './cart/cart.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { ProductsComponent } from './products/products.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductdetailsComponent } from './productdetails/productdetails.component';
+import { MainsliderComponent } from './mainslider/mainslider.component';
+import { SearchPipe } from './search.pipe';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,12 +33,16 @@ import { HttpClientModule } from '@angular/common/http';
     CartComponent,
     NotfoundComponent,
     ProductsComponent,
+    ProductdetailsComponent,
+    MainsliderComponent,
+    SearchPipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

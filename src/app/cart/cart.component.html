@@ -1,1 +1,29 @@
-<p>cart works!</p>
+<section class="bg-light p-4 my-4">
+  <h1 class="fw-bold text-main">Cart Items</h1>
+  <div *ngFor="let product of cartItems?.products;" class="row align-items-center border-bottom py-2">
+    <div class="col-md-1">
+      <img class="w-100" [src]="product.product.imageCover" alt="">
+    </div>
+    <div class="col-md-11">
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <h5>{{product.product.title}}</h5>
+          <h5 class="text-main">{{product.price | currency:"EGP"}}</h5>
+        </div>
+        <div>
+          <button (click)="updateCount(product.product._id,product.count+1)" class="btn btn-sm border-success">+</button>
+          <span class="mx-2">{{product.count}}</span>
+          <button (click)="updateCount(product.product._id,product.count-1)" class="btn btn-sm border-success">-</button>
+          <button (click)="removeItem(product.product._id)" class="mt-2 d-block btn m-0 p-0 btn-sm">
+            <i class="fa-regular fa-trash-can text-main"></i>
+            Remove
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button (click)="deleteCart()" class="my-2 btn btn-danger">
+    <i class="fa-regular fa-trash-can"></i>
+    Clear Cart
+  </button>
+</section>

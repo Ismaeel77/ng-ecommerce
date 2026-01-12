@@ -1,1 +1,7 @@
-<p>categories works!</p>
+<div class="row my-4">
+  <h2 class="fw-bold text-main">Categories</h2>
+  <div *ngFor="let category of categories" class="col p-0">
+    <img height="200" class="w-100 object-fit-cover" [src]="category?.image" [alt]="category?.name">
+    <h5 class="my-2">{{category?.name}}</h5>
+  </div>
+</div>
