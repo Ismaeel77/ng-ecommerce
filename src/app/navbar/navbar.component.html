@@ -9,19 +9,23 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul *ngIf="isLogin" class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" routerLinkActive="bg-dark text-white" routerLink="home">Home</a>
+            <a class="nav-link rounded-2" routerLinkActive="bg-dark text-white" routerLink="home">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" routerLinkActive="bg-dark text-white" routerLink="cart">Cart</a>
+            <a class="nav-link rounded-2" routerLinkActive="bg-dark text-white" routerLink="products">Products</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" routerLinkActive="bg-dark text-white" routerLink="products">Products</a>
+            <a class="nav-link rounded-2" routerLinkActive="bg-dark text-white" routerLink="categories">Categories</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" routerLinkActive="bg-dark text-white" routerLink="categories">Categories</a>
+            <a class="nav-link rounded-2" routerLinkActive="bg-dark text-white" routerLink="brands">Brands</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link active" routerLinkActive="bg-dark text-white" routerLink="brands">Brands</a>
+          <li class="nav-item position-relative">
+            <a class="nav-link rounded-2" routerLinkActive="bg-dark text-white" routerLink="cart">
+              Cart
+              <i class="fas fa-shopping-cart"></i>
+              <span class="badge position-absolute top-0 end-0 bg-main text-white">{{cartItems}}</span>
+            </a>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0  flex align-items-center">
