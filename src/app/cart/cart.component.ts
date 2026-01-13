@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
 import { BehaviorSubject } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -8,15 +9,23 @@ import { BehaviorSubject } from 'rxjs';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit{
-  constructor(private _CartService:CartService) {}
+  constructor(private _CartService:CartService, private _Router:Router) {}
   cartItems:any = [];
+  cartId:string = ''
   ngOnInit(): void {
     this._CartService.getLoggedUserCart().subscribe({
       next: (response) => {
         console.log(response.data);
         this.cartItems = response.data
+        this.cartId = response.data._id
       },
       error: (err) => {console.log(err)}
+    })
+  }
+
+  goToCheckout() {
+    this._Router.navigate(['/checkout'],{
+      queryParams:{cartId:this.cartId}
     })
   }
 

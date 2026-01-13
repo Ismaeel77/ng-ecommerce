@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductdetailsComponent } from './productdetails/productdetails.component';
 import { MainsliderComponent } from './mainslider/mainslider.component';
 import { SearchPipe } from './search.pipe';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { SearchPipe } from './search.pipe';
     ProductdetailsComponent,
     MainsliderComponent,
     SearchPipe,
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,

@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { ProductdetailsComponent } from './productdetails/productdetails.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'home', pathMatch:'full'},
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path:'cart',canActivate:[AuthGuard] ,component:CartComponent},
   {path:'brands',canActivate:[AuthGuard] ,component:BrandsComponent},
   {path:'productdetails/:id',canActivate:[AuthGuard] ,component:ProductdetailsComponent},
+  {path:'checkout',canActivate:[AuthGuard] ,component:CheckoutComponent},
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
   {path:'**',component:NotfoundComponent},
