@@ -18,7 +18,7 @@ export class LoginComponent {
     ]),
   });
 
-  
+
 
   handleLogin(loginForm:FormGroup) {
         if(loginForm.valid ) {
@@ -34,7 +34,7 @@ export class LoginComponent {
         },
         error: (err) => {
           this.isLoading = false
-          this.apiError = err.error.message
+          this.apiError = err?.error?.message
         }
       })
     }

@@ -24,7 +24,6 @@ export class AuthService {
     let decodedToken:any = jwtDecode(encodedToken);
     console.log(decodedToken);
     this.userInfo.next(decodedToken);
-
   }
 
   register(userData:object):Observable<any> {

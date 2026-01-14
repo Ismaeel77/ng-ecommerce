@@ -14,11 +14,12 @@ import { CartComponent } from './cart/cart.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { ProductsComponent } from './products/products.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ProductdetailsComponent } from './productdetails/productdetails.component';
 import { MainsliderComponent } from './mainslider/mainslider.component';
 import { SearchPipe } from './search.pipe';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { HeaderInterceptor } from './header.interceptor';
 
 
 @NgModule({
@@ -46,7 +47,13 @@ import { CheckoutComponent } from './checkout/checkout.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:HeaderInterceptor,
+      multi:true
+    }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

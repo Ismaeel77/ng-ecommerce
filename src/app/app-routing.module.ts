@@ -10,11 +10,13 @@ import { RegisterComponent } from './register/register.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { ProductdetailsComponent } from './productdetails/productdetails.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { CategoriesComponent } from './categories/categories.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'home', pathMatch:'full'},
   {path:'home', canActivate:[AuthGuard] ,component:HomeComponent},
   {path:'products',canActivate:[AuthGuard] ,component:ProductsComponent},
+  {path:'categories',canActivate:[AuthGuard] ,component:CategoriesComponent},
   {path:'cart',canActivate:[AuthGuard] ,component:CartComponent},
   {path:'brands',canActivate:[AuthGuard] ,component:BrandsComponent},
   {path:'productdetails/:id',canActivate:[AuthGuard] ,component:ProductdetailsComponent},
