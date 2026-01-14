@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../auth.service';
-import { Router } from '@angular/router';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +9,12 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent {
   isLogin:boolean = false
-  constructor(private _AuthService:AuthService, private _Router:Router) {
+  cartItems:number = 0;
+  constructor(private _AuthService:AuthService, private _CartService:CartService) {
+    this._CartService.numberOfCartItems.subscribe({
+      next: (value) => {this.cartItems = value},
+      error: (err) => {console.log(err)}
+    })
     this._AuthService.userInfo.subscribe({
       next: () => {
         if(_AuthService.userInfo.getValue() !== null) {
